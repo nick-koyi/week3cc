@@ -8,7 +8,7 @@ const showtime = document.getElementById('showtime');
 const ticketNum = document.getElementById('ticket-num');
 const ticketButton = document.getElementById('buy-ticket');
 
-fetch('http://localhost:3000/films/1')
+fetch('https://week3cc.onrender.com/films/1')
   .then((response) => {
     return response.json();
   })
@@ -29,7 +29,7 @@ fetch('http://localhost:3000/films/1')
     ticketButton.addEventListener('click', () => {
       if (numberOfTickets > 0) {
         numberOfTickets -= 1;
-        fetch('http://localhost:3000/films/1', {
+        fetch('https://week3cc.onrender.com/films/1', {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ fetch('http://localhost:3000/films/1')
       }
     });
     // Buying Event Listerner Ends
-    fetch('http://localhost:3000/tickets/', {
+    fetch('https://week3cc.onrender.com/tickets', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ fetch('http://localhost:3000/films/1')
   });
 
 //displaying poster
-fetch('http://localhost:3000/films')
+fetch('https://week3cc.onrender.com/films')
   .then((response) => {
     return response.json();
   })
@@ -93,7 +93,7 @@ fetch('http://localhost:3000/films')
 
       function deleteFilm() {
         // Send a DELETE request to the server when the delete button is clicked
-        fetch(`http://localhost:3000/films/${film.id}`, {
+        fetch(`https://week3cc.onrender.com/films/${film.id}`, {
           method: 'DELETE',
         }).then((response) => {
           // Remove the film from the list if the DELETE request is successful
